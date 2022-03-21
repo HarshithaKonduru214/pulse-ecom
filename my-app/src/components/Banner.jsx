@@ -1,4 +1,5 @@
 import banner from "../images/banner.svg";
+import "./style.css";
 
 const Banner = () => {
     return (
