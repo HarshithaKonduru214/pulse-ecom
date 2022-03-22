@@ -24,6 +24,8 @@ const Home = () => {
                             offers pertaining to free gifts or prizes or payments through links.</div>
                     </div>
                 </div>
+                
+                
             </main>
             
         </div>
