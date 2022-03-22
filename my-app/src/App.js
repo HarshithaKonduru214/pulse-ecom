@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/mockman" element={ <MockAPI /> } />
+        <Route path="/products" element={ <MockAPI /> } />
       </Routes>
     </div>
   );

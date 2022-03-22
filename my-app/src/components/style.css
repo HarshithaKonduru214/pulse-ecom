@@ -235,7 +235,7 @@ nav {
 }
 
 .price-item {
-    /* background-image: url("/images/background.jpg"); */
+    background-image: url("../images/background.jpg");
     padding: 1rem 1rem;
     justify-items: center;
 }
