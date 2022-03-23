@@ -22,27 +22,27 @@ export const ShopBy = () => {
 
 	return (
         <div>
-            <div class="category flex-column m-2">
-                <div class="heading align-self-center mb-1">SHOP BY CATEGORY</div>
-                <div class="category-container flex-row gap mr-1 justify-content-even">
+            <div className="category flex-column m-2">
+                <div className="heading align-self-center mb-1">SHOP BY CATEGORY</div>
+                <div className="category-container flex-row gap mr-1 justify-content-even">
                     { 
 				    	categoryList &&
 				    	categoryList.map(({_id, categoryName, img, id}, index) => (
-                        <Link to="" key={ id } class="category-item flex-column no-style-link">
-                            <img class="image-res" src={ img } alt="category" />
-                            <div class="category-content mt-1 gray-text">{ categoryName }</div>
+                        <Link to="" key={ id } className="category-item flex-column no-style-link">
+                            <img className="image-res" src={ img } alt="category" />
+                            <div className="category-content mt-1 gray-text">{ categoryName }</div>
                         </Link>		))
 				    }
                 </div>
             </div>
             
-            <div class="brand flex-column m-2">
-            <div class="heading align-self-center">SHOP BY BRANDS</div>
-                <div class="brand-container flex-row gap p-2 justify-content-even">
+            <div className="brand flex-column m-2">
+            <div className="heading align-self-center">SHOP BY BRANDS</div>
+                <div className="brand-container flex-row gap p-2 justify-content-even">
                 { brands.map((brand) => {
                     return (
-                        <div class="brand-item flex-row">
-                            <div class="brand-content">{ brand.toUpperCase() }</div>
+                        <div className="brand-item flex-row">
+                            <div className="brand-content">{ brand.toUpperCase() }</div>
                         </div>
                     )
                 })}
@@ -50,13 +50,13 @@ export const ShopBy = () => {
 				
 		    </div>
 
-            <div class="price flex-column gap p-2 m-2">
-                <div class="heading align-self-center">SHOP BY PRICE</div>
-                <div class="price-item-container flex-row gap justify-content-even">
+            <div className="price flex-column gap p-2 m-2">
+                <div className="heading align-self-center">SHOP BY PRICE</div>
+                <div className="price-item-container flex-row gap justify-content-even">
                     { price.map((p) => {
                         return (
-                            <div class="price-item flex-row">
-                                <div class="price-content">Under ₹{p}</div>
+                            <div className="price-item flex-row">
+                                <div className="price-content">Under ₹{p}</div>
                             </div>
                         )
                     })}

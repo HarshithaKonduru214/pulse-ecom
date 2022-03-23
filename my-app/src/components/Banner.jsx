@@ -3,8 +3,8 @@ import "./style.css";
 
 const Banner = () => {
     return (
-        <div class="banner m-2">
-            <img class="image-res" src={ banner } alt="banner-img" />
+        <div className="banner m-2">
+            <img className="image-res" src={ banner } alt="banner-img" />
         </div>
     );
 }

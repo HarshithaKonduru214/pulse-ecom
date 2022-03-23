@@ -326,8 +326,10 @@ nav {
 }
 
 .card-heading > .quote-icon {
-    font-size: 3rem;
+    font-size: 4rem;
     color: var(--primary-color);
+    align-self: flex-start;
+    margin-left: 1rem;
 }
 
 .card-by {
