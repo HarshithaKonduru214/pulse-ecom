@@ -349,14 +349,6 @@ nav {
     flex: 3 0 0;
 }
 
-.social-media-left > .social-media-item {
-    width: 20%;
-}
-
-.social-media-right {
-    flex: 1 0 0;
-}
-
 .social-icons {
     font-size: 1.5rem;
     background-color: var(--primary-color);
@@ -404,10 +396,7 @@ a > .social-icons:hover {
         visibility: hidden;
     }
 
-    .social-media {
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 0.5rem;
-    }
+   
 
 }
+
