@@ -2,6 +2,8 @@ import { Banner } from "../../components/Banner";
 import { Nav } from "../../components/Nav";
 import { ShopBy } from "../../components/ShopBy";
 import { Review } from "../../components/review";
+import { Footer } from "../../components/Footer"
+import { SocialMedia } from "../../components/SocialMedia"
 import "../../components/style.css";
 
 const Home = () => {
@@ -44,6 +46,17 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                
+
+                <div>
+                    <SocialMedia />
+                </div>
+
+                <div>
+                    <Footer />
+                </div>
+
                 
                 
                 
