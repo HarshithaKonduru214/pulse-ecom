@@ -41,7 +41,7 @@ export const ShopBy = () => {
                 <div className="brand-container flex-row gap p-2 justify-content-even">
                 { brands.map((brand) => {
                     return (
-                        <div className="brand-item flex-row">
+                        <div className="brand-item flex-row" key={ brand }>
                             <div className="brand-content">{ brand.toUpperCase() }</div>
                         </div>
                     )
@@ -55,7 +55,7 @@ export const ShopBy = () => {
                 <div className="price-item-container flex-row gap justify-content-even">
                     { price.map((p) => {
                         return (
-                            <div className="price-item flex-row">
+                            <div className="price-item flex-row" key={p}>
                                 <div className="price-content">Under ₹{p}</div>
                             </div>
                         )

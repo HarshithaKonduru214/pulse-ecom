@@ -19,19 +19,19 @@ const Nav = () => {
                             <strong>WOMEN</strong>
                         </Link>
                         <div className="list-item-stacked box-shadow flex-column p-2">
-                            { types.map((type) => <Link to="/" className="list-item gray-text no-style-link">{ type }</Link>)}
+                            { types.map((type) => <Link to="/" key={type} className="list-item gray-text no-style-link">{ type }</Link>)}
                         </div>
                     </div>
                     <div className="nav-category-item align-self-end pb-2">
                         <Link className="list-heading no-style-link" to="/"><strong>MEN</strong></Link>
                         <div className="list-item-stacked box-shadow flex-column p-2">
-                            { types.map((type) => <Link to="/" className="list-item gray-text no-style-link">{ type }</Link>)}
+                            { types.map((type) => <Link to="/" key={type} className="list-item gray-text no-style-link">{ type }</Link>)}
                         </div>
                     </div>
                     <div className="nav-category-item align-self-end pb-2">
                         <Link className="list-heading no-style-link" to="/"><strong>TOP BRANDS</strong></Link>
                         <div className="list-item-stacked box-shadow flex-column p-2">
-                            { brands.map( (brand) => <Link to="/" className="list-item gray-text no-style-link">{ brand }</Link>)}
+                            { brands.map( (brand) => <Link to="/" key={brand} className="list-item gray-text no-style-link">{ brand }</Link>)}
                             
                         </div>
                     </div>
