@@ -54,6 +54,9 @@ const Sidebar = () => {
                     <label for="engage">
                     <input className="checkbox mr-1" type="checkbox" name="engage" id="engage" />Engage</label>
                     <br />
+                    <label for="out-of-stock">
+                    <input className="checkbox mr-1" type="checkbox" name="out-of-stock" id="out-of-stock" />Include Out of Stock</label>
+                    <br />
                 </div>
 
             </div>

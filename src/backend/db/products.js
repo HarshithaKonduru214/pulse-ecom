@@ -57,7 +57,7 @@ export const products = [
     alt: "perfume-image",
     price: 3600,
     rating: 4.3,
-    inStock: false,
+    inStock: true,
     discount: Math.floor(Math.random() * 30),
     category: "perfumes",
     gender: "women"
@@ -71,7 +71,7 @@ export const products = [
     alt: "perfume-image",
     price: 9900,
     rating: 4.5,
-    inStock: false,
+    inStock: true,
     discount: Math.floor(Math.random() * 30),
     category: "perfumes",
     gender: "women"
@@ -127,7 +127,7 @@ export const products = [
     alt: "mist-image",
     price: 500,
     rating: 4.1,
-    inStock: false,
+    inStock: true,
     discount: Math.floor(Math.random() * 100),
     category: "deodorant",
     gender: "women"
@@ -141,7 +141,7 @@ export const products = [
     alt: "mist-image",
     price: 9900,
     rating: 4.5,
-    inStock: false,
+    inStock: true,
     discount: Math.floor(Math.random() * 100),
     category: "mist",
     gender: "women"

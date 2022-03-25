@@ -1,35 +1,37 @@
 import "./style.css"
-import { FaRegHeart} from "react-icons/fa"
+import { FaRegHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 
 const VerticalCard = ({ brand, category, discount, gender, inStock, name, price, rating, _id, img, alt}) => {
+    const ratingHandler = (rating) => {
+        return [...Array(Math.floor(rating / 1))] 
+    }
     return (
-        <div class="card-container box-shadow flex-column mb-2">
-            <div class="card-image-container flex-column">
-                <img class="card-image image-res" src={img} alt={alt} />
+        <div className="card-container box-shadow flex-column mb-2">
+            <div className={`card-image-container flex-column ${inStock ? "" : "text-overlay" }`}>
+                
+                <img className="card-image image-res" src={img} alt={alt} />
             </div>
-            <div class="card-content-container flex-column">
-                <div class="card-heading black-text mb-2">{name}</div>
-                <div class="card-price flex-row">
-                <div class="price-currency mr-1">MRP: </div>
-                <div class="price-value mr-1"><strike>₹{price}</strike></div>
-                <div class="price-dis-value">₹{price - (discount*price/100)}</div>
+            {inStock || <div class="overlay-text">OUT OF STOCK</div>}
+            <div className={`card-content-container flex-column ${inStock ? "" : "text-overlay" }`}>
+                <div className="card-heading black-text mb-2">{name}</div>
+                <div className="card-price flex-row">
+                <div className="price-currency mr-1">MRP: </div>
+                <div className="price-value mr-1"><strike>₹{price}</strike></div>
+                <div className="price-dis-value">₹{price - (discount*price/100)}</div>
             </div>
-            <div class="card-rating flex-row">
-                <div class="card-rating-value">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+            <div className="card-rating flex-row">
+                <div className="card-rating-value">
+                    { ratingHandler(rating).map((item) => <FaStar />)}
+                    {(rating % 1) ? <FaStarHalfAlt /> : <FaRegStar />}
                 </div>
-                <div class="card-rating-desc ml-2"> ( {rating} ) </div>
+                <div className="card-rating-desc ml-2"> ( {rating} ) </div>
             </div>
-            <div class="card-button flex-row container">
-                <button class="card-button card-wishlist align-self-center"><FaRegHeart /></button>
-                <button class="card-button card-cart align-self-center">Add To Cart</button>
+            <div className="card-button flex-row container">
+                <button className="card-button card-wishlist align-self-center"><FaRegHeart /></button>
+                <button className="card-button card-cart align-self-center">Add To Cart</button>
             </div>
         </div>
-        <div class="card-badge-top">{discount}% OFF</div>
+        <div className="card-badge-top">{discount}% OFF</div>
         </div>
        
     )

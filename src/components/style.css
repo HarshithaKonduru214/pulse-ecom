@@ -469,3 +469,7 @@ label {
 .heart-icon {
     color: black;
 }
+
+.overlay-text {
+    left: 15%;
+}
