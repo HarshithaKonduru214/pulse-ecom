@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Murecho&family=Roboto&display=swap');
 @import url('https://utility-component.netlify.app/utility.css');
+@import url('https://oxygen-ui-component-library.netlify.app/components/card/card.css');
 @import url("https://oxygen-ui-component-library.netlify.app/components/list/list.css");
 
 :root {
@@ -395,8 +396,76 @@ a > .social-icons:hover {
         display: none;
         visibility: hidden;
     }
-
-   
-
 }
 
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--light-gray);
+    position: sticky;
+    height: fit-content;
+    left: 0;
+    top: 4rem;
+}
+
+.sidebar-heading {
+    font-size: 1.5rem;
+}
+
+.sidebar-name {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: var(--border-gray) solid 3px;
+}
+
+.sidebar-clear {
+    font-size: 1rem;
+    color: var(--primary-color);
+    background-color: var(--light-gray);
+    border: none;
+}
+
+.sidebar-clear:hover {
+    background-color: var(--light-gray);
+    transform: unset;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.product-list{
+    grid-area: product-list;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+label {
+    font-size: 1rem;
+    color: var(--gray-text);
+}
+
+.dropdown-items {
+    font-size: 1rem;
+    color: var(--gray-text);
+}
+
+.dropdown {
+    font-size: 1rem;
+    color: var(--gray-text);
+}
+
+.card-image-container {
+    width: 80%;
+    min-height: 20rem;
+    max-height: 20rem;
+    align-self: center;
+    justify-content: center;
+}
+
+.card-container {
+    min-width: 18rem;
+    max-width: 18rem;
+    flex-wrap: wrap;
+}
+
+.heart-icon {
+    color: black;
+}

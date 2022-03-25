@@ -6,4 +6,6 @@ export { ShopBy  } from "./ShopBy";
 export { Social } from "./Social";
 export { SocialMedia } from "./SocialMedia";
 export { MockAPI } from "./Mockman"
+export { Sidebar } from "./Sidebar"
+export { VerticalCard } from "./VerticalCard"
 
