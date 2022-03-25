@@ -1,9 +1,4 @@
-import { Banner } from "../../components/Banner";
-import { Nav } from "../../components/Nav";
-import { ShopBy } from "../../components/ShopBy";
-import { Review } from "../../components/review";
-import { Footer } from "../../components/Footer"
-import { SocialMedia } from "../../components/SocialMedia"
+import { Banner, Nav, ShopBy, Review, Footer, SocialMedia } from "../../components/index";
 import "../../components/style.css";
 
 const Home = () => {
