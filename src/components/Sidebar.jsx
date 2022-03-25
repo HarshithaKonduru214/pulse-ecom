@@ -9,9 +9,9 @@ const Sidebar = () => {
                     <button className="sidebar-clear">CLEAR ALL</button>
                 </div>
                 <div className="sidebar-sort-by mb-2">
-                     <div className="sidebar-heading pb-2">Sort By: </div>
-                    <label for="sort-by"></label>
-                    <select className="dropdown" name="sort-by" id="sort-by" placeholder="Choose one">
+                    <div className="sidebar-heading pb-2">Sort By: </div>
+                    <label htmlFor="sort-by"></label>
+                    <select className="dropdown" name="sort-by" id="sort-by" placeholder="Choose one" onChange={(e) => console.log(e.target.value)}>
                         <option className="dropdown-items" value="choose" disabled hidden selected>Choose One</option>
                         <option className="dropdown-items" value="price-high">Price: High to Low</option>
                         <option className="dropdown-items" value="price-low">Price: Low to High</option>
@@ -20,11 +20,11 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-gender mb-2">
                     <div className="sidebar-heading pb-2">Gender</div>
-                    <label for="female">
+                    <label htmlFor="female">
                     <input className="mr-1" type="radio" name="gender" id="female" />Female</label><br />
-                    <label for="male">
+                    <label htmlFor="male">
                     <input className="mr-1" type="radio" name="gender" id="male" />Male</label><br />
-                    <label for="unisex">
+                    <label htmlFor="unisex">
                     <input className="mr-1" type="radio" name="gender" id="unisex" />Unisex</label>
                 </div>
                 <div className="sidebar-rating mb-2">
@@ -33,28 +33,28 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-category mb-2">
                     <div className="sidebar-heading pb-2">Brands</div>
-                    <label for="dior">
+                    <label htmlFor="dior">
                     <input className="checkbox mr-1" type="checkbox" name="dior" id="dior" />Dior</label>
                     <br />
-                    <label for="davidoff">
+                    <label htmlFor="davidoff">
                     <input className="checkbox mr-1" type="checkbox" name="davidoff" id="davidoff" />Davidoff</label>
                     <br />
-                    <label for="versace">
+                    <label htmlFor="versace">
                     <input className="checkbox mr-1" type="checkbox" name="versace" id="versace" />Versace</label>
                     <br />
-                    <label for="calvin-klien">
+                    <label htmlFor="calvin-klien">
                     <input className="checkbox mr-1" type="checkbox" name="calvin-klien" id="calvin-klien" />Calvin Klien</label>
                     <br />
-                    <label for="gucci">
+                    <label htmlFor="gucci">
                     <input className="checkbox mr-1" type="checkbox" name="gucci" id="gucci" />Gucci</label>
                     <br />
-                    <label for="nykaa">
+                    <label htmlFor="nykaa">
                     <input className="checkbox mr-1" type="checkbox" name="nykaa" id="nykaa" />Nykaa</label>
                     <br />
-                    <label for="engage">
+                    <label htmlFor="engage">
                     <input className="checkbox mr-1" type="checkbox" name="engage" id="engage" />Engage</label>
                     <br />
-                    <label for="out-of-stock">
+                    <label htmlFor="out-of-stock">
                     <input className="checkbox mr-1" type="checkbox" name="out-of-stock" id="out-of-stock" />Include Out of Stock</label>
                     <br />
                 </div>
