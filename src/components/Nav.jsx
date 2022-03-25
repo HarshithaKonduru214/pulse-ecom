@@ -1,7 +1,7 @@
 import "./style.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { Link } from "react-router-dom";
-import { faMagnifyingGlass, faHeart, faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FaHeart, FaUser, FaShoppingCart } from "react-icons/fa"
 import { brands, types } from "../data"
 
 const Nav = () => {
@@ -40,17 +40,18 @@ const Nav = () => {
 
             <div className="nav-right flex-row justify-content-between">
                 <div className="nav-search align-self-center gap flex-row">
-                    <FontAwesomeIcon icon={ faMagnifyingGlass } />
+    
                     <input className="align-self-center nav-search-bar" type="search" name="search"
                         placeholder="Search on Pulse" />
                 </div>
                 <div className="nav-user align-self-end mb-2">
-                    <Link to="/" className="account mr-2 button no-style-link black-text"><FontAwesomeIcon className="mr-1" icon={ faUser } /><span
+                    <Link to="/" className="account mr-2 button no-style-link black-text"><FaUser className="mr-1"/><span
                             className="nav-user-title">Account</span></Link>
-                    <Link to="/" className="wishlist mr-2 button no-style-link black-text"><FontAwesomeIcon className="mr-1" icon={ faHeart } /><span
+                    <Link to="/" className="wishlist mr-2 button no-style-link black-text"><FaHeart className="mr-1" /><span
                             className="nav-user-title">Wishlist</span></Link>
-                    <Link to="/" className="cart mr-2 button no-style-link black-text"><FontAwesomeIcon className="mr-1" icon={ faCartShopping } /><span
+                    <Link to="/" className="cart mr-2 button no-style-link black-text"><FaShoppingCart className="mr-1" /><span
                             className="nav-user-title">Cart</span></Link>
+                            
                 </div>
             </div>
         </div>

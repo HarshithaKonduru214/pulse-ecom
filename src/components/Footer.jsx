@@ -1,7 +1,6 @@
 import "./style.css";
 import { Link } from "react-router-dom"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { FaHeart } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -13,7 +12,7 @@ const Footer = () => {
                 <Link to="/" className="no-style-link white-text">PRIVACY POLICY</Link>
             </div>
             <div class="footer-note">
-                © 2022 Pulse - Made with <FontAwesomeIcon className="mr-1" icon={ faHeart } />by Harshitha Konduru
+                © 2022 Pulse - Made with <FaHeart /> by Harshitha Konduru
             </div>
         </div>
     )
