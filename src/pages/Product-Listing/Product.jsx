@@ -6,7 +6,7 @@ import { Nav, Sidebar, VerticalCard, SocialMedia, Footer } from "../../component
 import { useProducts } from "../../Context/ProductContext";
 
 const Product = () => {
-    const { dispatch } = useProducts();
+    const { dispatch, filteredData } = useProducts();
     const [productList, setProductList] = useState([])
     useEffect(() => {
         (async () => {
@@ -26,7 +26,7 @@ const Product = () => {
                     <Sidebar />
                 </div>
                 <div className="product-list flex-row p-2">
-                    { productList.map(({ brand, category, desc, discount, gender, id, inStock, name, price, rating, _id, img, alt }) => {return (
+                    { filteredData && filteredData.map(({ brand, category, desc, discount, gender, id, inStock, name, price, rating, _id, img, alt }) => {return (
                         <VerticalCard brand={brand} category={category} discount={discount} gender={gender} key={_id} inStock={inStock} name={name} price={price} rating={rating} img={img} alt={alt} />
                     )})}
                 </div>

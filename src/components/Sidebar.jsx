@@ -23,11 +23,11 @@ const Sidebar = () => {
                 <div className="sidebar-gender mb-2">
                     <div className="sidebar-heading pb-2">Gender</div>
                     <label htmlFor="female">
-                    <input className="mr-1" type="radio" name="gender" id="female" />Female</label><br />
+                    <input className="mr-1" type="radio" name="gender" id="female" value="female" onChange={() => dispatch({type:"FILTER_GENDER", payload: "female"})}/>Female</label><br />
                     <label htmlFor="male">
-                    <input className="mr-1" type="radio" name="gender" id="male" />Male</label><br />
+                    <input className="mr-1" type="radio" name="gender" id="male" value="male" onChange={() => dispatch({type:"FILTER_GENDER", payload: "male"})}/>Male</label><br />
                     <label htmlFor="unisex">
-                    <input className="mr-1" type="radio" name="gender" id="unisex" />Unisex</label>
+                    <input className="mr-1" type="radio" name="gender" id="unisex" value="unisex" onChange={() => dispatch({type:"FILTER_GENDER", payload: "unisex"})}/>Unisex</label>
                 </div>
                 <div className="sidebar-rating mb-2">
                     <div className="sidebar-heading pb-2">Rating</div>
