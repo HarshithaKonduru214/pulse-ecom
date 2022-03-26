@@ -1,6 +1,8 @@
 import "../components/style.css";
+import { useProducts } from "../Context/ProductContext"
 
 const Sidebar = () => {
+    const { dispatch } = useProducts();
     return (
         <div>
             <div className="sidebar flex-column">
@@ -11,11 +13,11 @@ const Sidebar = () => {
                 <div className="sidebar-sort-by mb-2">
                     <div className="sidebar-heading pb-2">Sort By: </div>
                     <label htmlFor="sort-by"></label>
-                    <select className="dropdown" name="sort-by" id="sort-by" placeholder="Choose one" onChange={(e) => console.log(e.target.value)}>
+                    <select className="dropdown" name="sort-by" id="sort-by" placeholder="Choose one" onChange={(e) => dispatch({type:"SORT", payload: e.target.value})}>
                         <option className="dropdown-items" value="choose" disabled hidden selected>Choose One</option>
-                        <option className="dropdown-items" value="price-high">Price: High to Low</option>
-                        <option className="dropdown-items" value="price-low">Price: Low to High</option>
-                        <option className="dropdown-items" value="discount">Discount</option>
+                        <option className="dropdown-items" value="HIGH_TO_LOW">Price: High to Low</option>
+                        <option className="dropdown-items" value="LOW_TO_HIGH">Price: Low to High</option>
+                        <option className="dropdown-items" value="DISCOUNT">Discount</option>
                     </select>
                 </div>
                 <div className="sidebar-gender mb-2">

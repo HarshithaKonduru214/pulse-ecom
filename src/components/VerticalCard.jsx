@@ -15,16 +15,16 @@ const VerticalCard = ({ brand, category, discount, gender, inStock, name, price,
             <div className={`card-content-container flex-column ${inStock ? "" : "text-overlay" }`}>
                 <div className="card-heading black-text mb-2">{name}</div>
                 <div className="card-price flex-row">
-                <div className="price-currency mr-1">MRP: </div>
-                <div className="price-value mr-1"><strike>₹{price}</strike></div>
-                <div className="price-dis-value">₹{price - (discount*price/100)}</div>
+                <div className="price-currency mr-1 gray-text">MRP: </div>
+                <div className="price-value mr-1 gray-text"><strike>₹{price}</strike></div>
+                <div className="price-dis-value gray-text">₹{price - (discount*price/100)}</div>
             </div>
             <div className="card-rating flex-row">
                 <div className="card-rating-value">
                     { ratingHandler(rating).map((item) => <FaStar />)}
                     {(rating % 1) ? <FaStarHalfAlt /> : <FaRegStar />}
                 </div>
-                <div className="card-rating-desc ml-2"> ( {rating} ) </div>
+                <div className="card-rating-desc ml-2 gray-text"> ( {rating} ) </div>
             </div>
             <div className="card-button flex-row container">
                 <button className="card-button card-wishlist align-self-center"><FaRegHeart /></button>
