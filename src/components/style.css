@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Syne+Tactile&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Murecho&family=Roboto&display=swap');
+@import url('https://utility-component.netlify.app/utility.css');
+@import url("https://oxygen-ui-component-library.netlify.app/components/list/list.css");
+
+:root {
+    --primary-color: #db2777;
+    --secondary-color: #ec4899;
+    --light-pink: #fce7f3;
+    --font-black: #2F323A;
+    --gray-text: gray;
+    --light-gray: #f3f4f6;
+    --border-gray: #e5e7eb;
+    --white-color: white;
+    --light-blue: #e0e7ff;
+    --dark-gray: #475569;
+}
+
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.white-text {
+    color: var(--white-color);
+}
+
+.image-res {
+    width: 100%;
+    height: auto;
+}
+
+.button {
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    align-content: left;
+}
+
+.gap {
+    gap: 1rem;
+}
+
+/* body styling */
+.body {
+    display: grid;
+    font-family: 'Roboto', sans-serif;
+    grid-template-rows: 0.1fr 4fr;
+    grid-template-areas: "navbar"
+        "main";
+}
+
+/* navbar styling */
+nav {
+    grid-area: navbar;
+    position: sticky;
+    width: 100%;
+    background-color: var(--white-color);
+    z-index: 2;
+    top: 0;
+}
+
+.nav-left {
+    flex: 2 1 auto;
+}
+
+.nav-right {
+    flex: 1 0 auto;
+}
+
+/* logo styling */
+.nav-logo>a {
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.list-heading {
+    color: var(--font-black);
+    font-weight: 900;
+}
+
+/* Dropdown lists on hover */
+
+.nav-category-item {
+    position: relative;
+    display: inline-block;
+}
+
+.list-item-stacked {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    width: max-content;
+}
+
+.nav-category-item:hover .list-item-stacked {
+    display: flex;
+    top: 2rem;
+}
+
+.nav-search {
+    background-color: var(--light-gray);
+    border: var(--border-gray) solid 2px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.nav-search-bar {
+    border: none;
+    background-color: var(--light-gray);
+    font-size: 0.8rem;
+    color: var(--gray-text);
+}
+
+.nav-search-bar:focus {
+    border: none;
+    outline: none;
+}
+
+
+.fa-search {
+    color: var(--gray-text);
+}
+
+.list-item {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.list-item:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* main content styling */
+.main-container {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr) 0.5fr repeat(3, 1fr) 0.5fr 0.2fr;
+    grid-template-areas: "banner"
+        "note1"
+        "category"
+        "brand"
+        "price"
+        "note"
+        "review"
+        "social-media"
+        "footer";
+    grid-gap: 1rem;
+    margin-bottom: 6rem;
+    height: 100vh;
+}
+
+/* banner */
+.banner {
+    grid-area: banner;
+    width: 100%;
+}
+
+/* Note 1 styling - 100% Authentic Fragrances */
+.note1{
+    grid-area: note1;
+    background-image: linear-gradient(#e0e7ff,#c7d2fe);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 80%;
+    height: max-content;
+    margin: auto;
+}
+
+.message-container1 {
+    border: var(--white-color) solid 2px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3rem;
+    justify-content: center;
+
+}
+
+.message-name {
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-color);
+    font-weight: bolder;
+    border-right: gray solid 2px;
+    padding-right: 2rem;
+    margin-right: 1rem;
+}
+
+.message-desc {
+    font-size: 1.2rem;
+    color: var(--gray-text);
+}
+
+.note1:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+/* category */
+.category {
+    grid-area: category;
+    padding-top: 2rem;
+    width: fit-content;
+    margin: auto;
+}
+
+.category-content {
+    font-size: 1.2rem;
+    align-self: center;
+    background-color: var(--white-color);
+}
+
+.category-item:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+/* price */
+.price {
+    grid-area: price;
+    width: fit-content;
+    margin: auto;
+    padding-top: 2rem;
+}
+
+.price-item {
+    background-image: url("../images/background.jpg");
+    padding: 1rem 1rem;
+    justify-items: center;
+}
+
+.price-content {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--white-color);
+    padding: 1rem 1rem;
+    color: var(--gray-text);
+}
+
+.price-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+/* brand */
+.brand {
+    grid-area: brand;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+}
+
+.brand-item {
+    background-color: #e0e7ff;
+    padding: 2rem 1rem;
+    justify-content: center;
+    min-width: 15%;
+    height: fit-content;
+}
+
+.brand-content {
+    font-family: 'Murecho', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-text);
+    letter-spacing: 0.2rem;
+}
+
+.brand-container {
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.brand-item:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+/* note - Beware messagee */
+.note {
+    grid-area: note;
+    background-color: var(--light-pink);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 80%;
+    height: max-content;
+    margin: auto;
+}
+
+.message-container {
+    border: var(--secondary-color) solid 2px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3rem;
+}
+
+.note:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+/* reviews */
+.review {
+    grid-area: review;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+}
+
+.card-container {
+    width: fit-content;
+}
+
+.card-heading > .quote-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    align-self: flex-start;
+    margin-left: 1rem;
+}
+
+.card-by {
+    align-self: flex-end;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* social media */
+.social-media {
+    grid-area: social-media;
+    background-color: var(--light-gray);
+    margin-top: 2rem;
+}
+
+.social-media-left {
+    flex: 3 0 0;
+}
+
+.social-icons {
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    height: fit-content;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.social-heading {
+    font-weight: 600;
+    border-bottom: var(--border-gray) solid 2px;
+    padding-bottom: 0.5rem;
+}
+
+a > .social-icons:hover {
+    transform: scale(1.1);
+}
+
+/* footer */
+.footer {
+    grid-area: footer;
+    background-color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+.policy {
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-note {
+    align-self: center;
+    color: var(--white-color);
+}
+
+/* minimal responsive code */
+@media screen and (max-width: 950px) {
+    .nav-category-item {
+        display: none;
+    }
+
+    .nav-user-title {
+        display: none;
+        visibility: hidden;
+    }
+
+   
+
+}
+
