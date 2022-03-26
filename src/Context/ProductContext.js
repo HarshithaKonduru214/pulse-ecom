@@ -1,48 +1,43 @@
-import { useContext, createContext, useReducer, useEffect, useState } from "react";
-
+import { useContext, createContext, useReducer } from "react";
+import { brands } from "../data"
+import { productReducer } from "../Reducer/ProductReducer";
+import { sortData } from "../utils/sortData";
+import { filterGender } from "../utils/filterGender"
+import { filterInStock } from "../utils/filterInStock"
+import { filteredBrands } from "../utils/filterBrands";
+import { filterPrice } from "../utils/filterPrice";
 const productContext = createContext(null);
 
 const ProductContext = ({children}) => {
-    const productReducer = (state, {type, payload}) => {
-        switch(type) {
-            case "FETCH_DATA": return {...state, products: payload}
-            case "SORT": return {...state, sortBy: payload};
-            case "FILTER_GENDER": return {...state, gender: payload }
-            default: return state;
-        }
-    }
-
-    const sortData = (products, sortBy) => {
-        switch(sortBy) {
-            case "HIGH_TO_LOW": return products.sort((a,b) => (b.price - (b.discount*b.price/100)) - (a.price - (a.discount*a.price/100)));
-            case "LOW_TO_HIGH": return products.sort((a,b) => (a.price - (a.discount*a.price/100)) - (b.price - (b.discount*b.price/100)));
-            case "DISCOUNT": return products.sort((a,b) => b.discount - a.discount)
-            default: return products;
-        }
-    }
-
-    const filterData = (data, gender) => {
-        switch(gender) {
-            case "female": return data.filter((product) => product.gender === "women");
-            case "male": return data.filter((product) => product.gender === "men");
-            case "unisex": return data.filter((product) => product.gender === "unisex");
-            default: return data
-        }
-    }
-
-    const [{ products, sortBy, gender }, dispatch] = useReducer(productReducer, {
+    const [{ products, sortBy, gender, brandFilter, priceFilter, inStock }, dispatch] = useReducer(productReducer, {
         products: [],
         sortBy: "",
-        gender: null
+        gender: null,
+        brandFilter: brands.reduce((acc,curr)=> (acc[curr]= false,acc),{}),
+        priceFilter: 10000,
+        inStock: true
     })
 
-    const sortedData = sortData(products, sortBy);
-    const filteredData = filterData(sortedData,gender);
-    console.log(filteredData)
+    const objFilter = (obj) => {
+        let newObj = {}
+        for (const [key, value] of Object.entries(obj)) {
+            if (value) {
+                newObj = { ...newObj, [key]: value }
+            }
+        }
+        return newObj
+    }
+    
+    const brandsToBeFiltered = objFilter(brandFilter)
+    const filteredStock = filterInStock(products, inStock)
+    const sortedData = sortData(filteredStock, sortBy);
+    const filteredGender = filterGender(sortedData,gender);
+    const filteredPrice = filterPrice(filteredGender, priceFilter);
+    const filterData = filteredBrands(filteredPrice, brandsToBeFiltered);
 
     return (
     
-        <productContext.Provider value={{ dispatch, filteredData }}>
+        <productContext.Provider value={{ dispatch, filterData }}>
             {children}
         </productContext.Provider>
     )
