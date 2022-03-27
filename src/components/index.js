@@ -8,4 +8,5 @@ export { SocialMedia } from "./SocialMedia";
 export { MockAPI } from "./Mockman"
 export { Sidebar } from "./Sidebar"
 export { VerticalCard } from "./VerticalCard"
+export { ProductInfo } from "./ProductInfo"
 

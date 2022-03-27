@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom"
-import { Home, Product } from "./pages"
+import { Home, Product, ProductPage } from "./pages"
 import { MockAPI } from "./components";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Route path="/" element={ <Home /> } />
         <Route path="/mockman" element={ <MockAPI /> } />
         <Route path="/product-listing" element={ <Product /> } />
+        <Route path="/product-page" element={ <ProductPage />} />
       </Routes>
     </div>
   );
