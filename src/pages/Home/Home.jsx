@@ -32,7 +32,7 @@ const Home = () => {
                     <div className="review flex-column justify-content-around m-2">
                         <div className="heading align-self-center">REVIEWS</div>
                         <div className="review-container flex-row justify-content-around gap">
-                            <Review review="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                            <Review className="gray-text" review="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                 the industry's standard dummy text ever since the 1500s." by="Falguni Nayar" />
                             <Review review="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                 the industry's standard dummy text ever since the 1500s." by="Harshita" />
