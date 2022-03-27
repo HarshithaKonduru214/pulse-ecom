@@ -1,8 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom"
-import { Home } from "./pages/Home/Home"
-import { Product } from "./pages/Product-Listing/Product"
-import { MockAPI } from "./components/index";
+import { Home, Product } from "./pages"
+import { MockAPI } from "./components";
 
 function App() {
   return (

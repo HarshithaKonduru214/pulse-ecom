@@ -35,7 +35,7 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-rating mb-2">
                     <div className="sidebar-heading pb-2">Price: 0 to {price}</div>
-                    <input type="range" list="tickmarks" name="rating" id="rating" min="1000" max="10000" step="1000" onChange={(e) => {
+                    <input type="range" list="tickmarks" value={ price } name="rating" id="rating" min="1000" max="10000" step="1000" onChange={(e) => {
                         setPrice(e.target.value);
                         dispatch({type:"FILTER_BY_PRICE", payload: e.target.value})}} />
                 </div>
@@ -64,7 +64,7 @@ const Sidebar = () => {
                     <br />
                     <label htmlFor="out-of-stock">
                     <input className="checkbox mr-1" type="checkbox" name="out-of-stock" id="out-of-stock" onChange={(e) => dispatch({type:"OUT_OF_STOCK", payload: "out-of-stock"})}/>Include Out of Stock</label>
-                    <br />
+                    <br />                    
                 </div>
 
             </form>

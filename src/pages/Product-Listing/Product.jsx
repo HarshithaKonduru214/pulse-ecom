@@ -1,17 +1,16 @@
 import "./Product.css";
 import "../../components/style.css"
-import { useState, useEffect } from "react"
+import { useEffect } from "react";
 import axios from "axios"
-import { Nav, Sidebar, VerticalCard, SocialMedia, Footer } from "../../components/index";
+import { Nav, Sidebar, VerticalCard, SocialMedia, Footer } from "../../components";
 import { useProducts } from "../../Context/ProductContext";
 
 const Product = () => {
     const { dispatch, filterData } = useProducts();
-    const [productList, setProductList] = useState([])
+
     useEffect(() => {
         (async () => {
             const { data: { products } } = await axios.get("/api/products");
-            setProductList(products);
             dispatch({type:"FETCH_DATA", payload: products})
         })();
     }, []);

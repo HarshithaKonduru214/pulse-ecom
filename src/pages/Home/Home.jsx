@@ -41,22 +41,13 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
-                
-
                 <div>
                     <SocialMedia />
                 </div>
-
                 <div>
                     <Footer />
-                </div>
-
-                
-                
-                
-            </main>
-            
+                </div>    
+            </main>    
         </div>
     )
 }

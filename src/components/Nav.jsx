@@ -1,11 +1,9 @@
 import "./style.css";
-
 import { Link } from "react-router-dom";
 import { FaHeart, FaUser, FaShoppingCart } from "react-icons/fa"
 import { brands, types } from "../data"
 
 const Nav = () => {
-    
     return (
         <nav className="nav mb-2 box-shadow">
         <div className="nav-content flex-row justify-content-between">
@@ -31,8 +29,7 @@ const Nav = () => {
                     <div className="nav-category-item align-self-end pb-2">
                         <Link className="list-heading no-style-link" to="/"><strong>TOP BRANDS</strong></Link>
                         <div className="list-item-stacked box-shadow flex-column p-2">
-                            { brands.map( (brand) => <Link to="/" key={brand} className="list-item gray-text no-style-link">{ brand }</Link>)}
-                            
+                            { brands.map( (brand) => <Link to="/" key={brand} className="list-item gray-text no-style-link">{ brand }</Link>)}             
                         </div>
                     </div>
                 </div>
@@ -50,8 +47,7 @@ const Nav = () => {
                     <Link to="/" className="wishlist mr-2 button no-style-link black-text"><FaHeart className="mr-1" /><span
                             className="nav-user-title">Wishlist</span></Link>
                     <Link to="/" className="cart mr-2 button no-style-link black-text"><FaShoppingCart className="mr-1" /><span
-                            className="nav-user-title">Cart</span></Link>
-                            
+                            className="nav-user-title">Cart</span></Link>            
                 </div>
             </div>
         </div>
