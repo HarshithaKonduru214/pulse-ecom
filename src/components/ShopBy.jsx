@@ -28,7 +28,7 @@ export const ShopBy = () => {
                     { 
 				    	categoryList &&
 				    	categoryList.map(({_id, categoryName, img, id}, index) => (
-                        <Link to="" key={ id } className="category-item flex-column no-style-link">
+                        <Link to="/product-listing" key={ id } className="category-item flex-column no-style-link">
                             <img className="image-res" src={ img } alt="category" />
                             <div className="category-content mt-1 gray-text">{ categoryName }</div>
                         </Link>		))
