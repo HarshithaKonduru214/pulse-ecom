@@ -4,6 +4,7 @@
 @import url('https://utility-component.netlify.app/utility.css');
 @import url('https://oxygen-ui-component-library.netlify.app/components/card/card.css');
 @import url("https://oxygen-ui-component-library.netlify.app/components/list/list.css");
+@import url("https://oxygen-ui-component-library.netlify.app/components/alert/alert.css");
 
 :root {
     --primary-color: #db2777;

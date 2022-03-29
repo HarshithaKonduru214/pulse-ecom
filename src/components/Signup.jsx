@@ -1,8 +1,11 @@
 import "../pages/Signup/sign.css";
 import { useState } from "react"
 import axios from "axios"
+import { Toast } from "../components"
 
 const Signup = () => {
+    const [check, setCheck] = useState(false)
+    const [toast, setToast] = useState("");
     const [ data, setData ] = useState({
         firstName: "",
         email: "",
@@ -10,15 +13,20 @@ const Signup = () => {
         confirmPassword: ""
     });
 
-    async function clickHandler() {
+    async function clickHandler(event) {
         try {
+            if(data.password !== data.confirmPassword) {
+                return setToast("Passwords do not match.")
+            } 
+            if (check === false) {
+                return setToast("Please accept the terms and conditions.")
+            }
             const response = await axios.post(`/api/auth/signup`, {
-                firstName: "Adarsh",
-                lastName: "Balika",
-                email: "adarshbalika@neog.camp",
-                password: "adarshBalika",
-              });
-              console.log(response)
+                firstName: data.name,
+                email: data.email,
+                password: data.password,
+            });
+            (response.status === 201) && localStorage.setItem("token", JSON.stringify(response.data.encodedToken))
         } catch(err) {
             console.log(err)
         }
@@ -31,6 +39,7 @@ const Signup = () => {
                 <div class="main-desc mb-2 gray-text">To quickly find your favourites items, saved addresses and payments.</div>
                 <hr />
                 <div class="main-desc mb-2 mt-2 gray-text">Register and earn 2000 reward points</div>
+                { toast && <Toast msg={ toast }/>}
                 <div class="main-form flex-column">
                     <div class="input flex-column container">
                         <input class="input-text" type="text" placeholder="Enter Name" onChange={(e) => {setData({...data, firstName: e.target.value})}} />
@@ -49,15 +58,17 @@ const Signup = () => {
                         <div class="placeholder">Confirm Password</div>
                     </div>
                     <div class="form-check align-self-center mb-2">
-                        <input className="mr-1" type="checkbox" name="condition" id="condition" />
+                        <input className="mr-1" type="checkbox" name="condition" id="condition" value={check} onChange={() => setCheck((prev) => !prev)} />
                         <label for="condition">I accept all Terms & Conditions</label>
                     </div>
                     <div class="main-buttons flex-column">
-                        <button class="sign-button" onClick={clickHandler} >Create New Account</button>
+                        <button class="sign-button" onClick={clickHandler}>Create New Account</button>
                         <button to="/" class="sign-button-secondary no-style-link gray-text flex-row justify-content-around">Already have an Account</button>
                     </div>
                 </div>
+                
             </div>
+            
         </div>
     )
 }
