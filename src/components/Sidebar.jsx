@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../components/style.css";
+import { brands} from "../data"
 import { useProducts } from "../Context/ProductContext"
 
 const Sidebar = () => {
@@ -40,31 +41,17 @@ const Sidebar = () => {
                         dispatch({type:"FILTER_BY_PRICE", payload: e.target.value})}} />
                 </div>
                 <div className="sidebar-category mb-2">
-                    <div className="sidebar-heading pb-2">Brands</div>
-                    <label htmlFor="dior">
-                    <input className="checkbox mr-1" type="checkbox" name="dior" id="dior" onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: "dior"})}/>Dior</label>
-                    <br />
-                    <label htmlFor="davidoff">
-                    <input className="checkbox mr-1" type="checkbox" name="davidoff" id="davidoff" onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: "davidoff"})}/>Davidoff</label>
-                    <br />
-                    <label htmlFor="versace">
-                    <input className="checkbox mr-1" type="checkbox" name="versace" id="versace" onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: "versace"})}/>Versace</label>
-                    <br />
-                    <label htmlFor="calvin-klien">
-                    <input className="checkbox mr-1" type="checkbox" name="calvin-klien" id="calvin-klien" onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: "calvin klien"})}/>Calvin Klien</label>
-                    <br />
-                    <label htmlFor="gucci">
-                    <input className="checkbox mr-1" type="checkbox" name="gucci" id="gucci" onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: "gucci"})}/>Gucci</label>
-                    <br />
-                    <label htmlFor="nykaa">
-                    <input className="checkbox mr-1" type="checkbox" name="nykaa" id="nykaa" onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: "nykaa"})}/>Nykaa</label>
-                    <br />
-                    <label htmlFor="engage">
-                    <input className="checkbox mr-1" type="checkbox" name="engage" id="engage" onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: "engage"})}/>Engage</label>
-                    <br />
+                    <div className="sidebar-heading pb-2">Brands</div>      
+                    { brands.map((brand) => {
+                        return ( <div>
+                        <label htmlFor="out-of-stock">
+                        <input className="checkbox mr-1" type="checkbox" name={brand} id={brand} onChange={(e) => dispatch({type:"FILTER_BY_BRAND", payload: brand})}/>{brand.toUpperCase() }</label>
+                        <br /> 
+                        </div>
+                    )})}  
                     <label htmlFor="out-of-stock">
-                    <input className="checkbox mr-1" type="checkbox" name="out-of-stock" id="out-of-stock" onChange={(e) => dispatch({type:"OUT_OF_STOCK", payload: "out-of-stock"})}/>Include Out of Stock</label>
-                    <br />                    
+                    <input className="checkbox mr-1" type="checkbox" name="out-of-stock" id="out-of-stock" onChange={(e) => dispatch({type:"OUT_OF_STOCK", payload: "out-of-stock"})}/>INCLUDE OUT OF STOCK</label>
+                    <br />                
                 </div>
 
             </form>
