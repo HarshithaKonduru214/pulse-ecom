@@ -51,12 +51,12 @@ const Nav = () => {
                                 className="nav-user-title">Cart</span></Link>         
                         <div className="nav-category-item align-self-end pb-2">
                             <Link to="/" className="account mr-2 button no-style-link black-text"><FaUser className="mr-1"/><span
-                                className="nav-user-title">{(user && user.length) ? user.firstName : "Account"}</span></Link>
+                                className="nav-user-title">{(localStorage.getItem("user")) ? user.firstName : "Account"}</span></Link>
                             <div className="list-item-stacked box-shadow flex-column mr-1">
                                 <button className="list-item gray-text account-item">PROFILE</button>
                                 <button className="list-item gray-text account-item">PAYMENTS</button>
                                 <button className="list-item gray-text account-item">ORDERS</button>
-                                <button className="list-item gray-text account-item" onClick={() => logoutHandler()}>{(user && user.length) ? "LOGOUT": "LOGIN"}</button>
+                                <button className="list-item gray-text account-item" onClick={() => logoutHandler()}>{(localStorage.getItem("user")) ? "LOGOUT": "LOGIN"}</button>
                             </div>
                         </div>          
                     </div>

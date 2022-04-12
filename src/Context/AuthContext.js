@@ -64,7 +64,7 @@ const AuthProvider = ({children}) => {
       };
 
       const logoutHandler = () => {
-        if (user) {
+        if (localStorage.getItem("user")) {
             localStorage.removeItem("user")
             localStorage.removeItem("login")
             setUser([]);
