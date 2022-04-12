@@ -36,7 +36,7 @@ export const products = [
   },
   {
     _id: uuid(),
-    name:"Versace Bright Crystal Eau De Toilette",
+    name:"Versace Bright Crystal",
     desc: "An enthralling and voluptuous fragrance, for the Versace woman who is strong and confident yet feminine, sensual, and always glamorous, who loves to be enveloped in a fragrance that delicately tastes of colorful and juicy pomegranate grains, iced freshness, and shining yuzu. A scent that then flows into the beauty of magnolia, peony, and lotus flowers in a mixture of voluptuousness and transparency, and delights you with its subtle sensuality and the enticing presence of plant amber, acajou and musk. It's packaging, a dress as sumptuous as it is elegant, in a very tender pink with silver hints, recalls the floral freshness of Versace Bright Crystal.",
     brand: "versace",
     img: "https://images-static.nykaa.com/media/catalog/product/8/0/8011003993802.jpg",

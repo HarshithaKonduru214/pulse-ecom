@@ -73,6 +73,7 @@ nav {
 
 .nav-right {
     flex: 1 0 auto;
+    margin-right: 1.5rem;
 }
 
 /* logo styling */
@@ -220,6 +221,8 @@ nav {
     font-size: 1.2rem;
     align-self: center;
     background-color: var(--white-color);
+    width: 100%;
+    text-align: center;
 }
 
 .category-item:hover {
@@ -473,4 +476,21 @@ label {
 
 .overlay-text {
     left: 15%;
+}
+
+.alert {
+    width: 25%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.alert-close-icon{
+    cursor: pointer;
+}
+
+.account-item {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-bottom: var(--light-gray) solid 2px;
+    background-color: var(--white-color);
 }
