@@ -1,6 +1,7 @@
 import { brands } from "../data"
 
 const productReducer = (state, {type, payload}) => {
+    console.log(type, payload)
     switch(type) {
         case "FETCH_DATA": return {...state, products: payload}
         case "SORT": return {...state, sortBy: payload};

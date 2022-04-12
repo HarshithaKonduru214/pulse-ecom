@@ -1,0 +1,65 @@
+
+
+.login-body {
+    font-family: 'Roboto', sans-serif;
+    position: sticky;
+    background-color: var(--light-gray);
+}
+
+.login-container {
+    margin: auto;
+    border: var(--border-gray) solid 1.5px;
+}
+
+.login-main {
+    width: 25%;
+    margin: auto;
+    background-color: var(--white-color);
+}
+
+.main-heading {
+    font-size: 1.5rem;
+    /* align-self: center; */
+    font-weight: bold;
+}
+
+.sign-button {
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    color: var(--white-color);
+    border: var(--gray-text) solid 1px;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sign-button-secondary {
+    font-size: 1rem;
+    border: var(--border-gray) solid 1px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.sign-up-container {
+    align-content: center;
+}
+
+.form-check  {
+    margin-bottom: 2rem;
+}
+
+.main-desc {
+    font-size: 1.05rem;
+}
+
+.form-check-link {
+    color: var(--primary-color);
+}
+
+.sign-button-secondary:hover {
+    border: var(--primary-color) solid 2px;
+
+}

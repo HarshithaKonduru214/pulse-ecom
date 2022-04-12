@@ -2,8 +2,12 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { FaHeart, FaUser, FaShoppingCart } from "react-icons/fa"
 import { brands, types } from "../data"
+import { useAuth } from "../Context/AuthContext";
 
 const Nav = () => {
+
+    const { user, logoutHandler } = useAuth();
+    
     return (
         <nav className="nav mb-2 box-shadow">
             <div className="nav-content flex-row justify-content-between">
@@ -40,13 +44,21 @@ const Nav = () => {
                         <input className="align-self-center nav-search-bar" type="search" name="search"
                             placeholder="Search on Pulse" />
                     </div>
-                    <div className="nav-user align-self-end mb-2">
-                        <Link to="/" className="account mr-2 button no-style-link black-text"><FaUser className="mr-1"/><span
-                                className="nav-user-title">Account</span></Link>
+                    <div className="nav-user align-self-end">
                         <Link to="/" className="wishlist mr-2 button no-style-link black-text"><FaHeart className="mr-1" /><span
                                 className="nav-user-title">Wishlist</span></Link>
                         <Link to="/" className="cart mr-2 button no-style-link black-text"><FaShoppingCart className="mr-1" /><span
-                                className="nav-user-title">Cart</span></Link>            
+                                className="nav-user-title">Cart</span></Link>         
+                        <div className="nav-category-item align-self-end pb-2">
+                            <Link to="/" className="account mr-2 button no-style-link black-text"><FaUser className="mr-1"/><span
+                                className="nav-user-title">{(localStorage.getItem("user")) ? user.firstName : "Account"}</span></Link>
+                            <div className="list-item-stacked box-shadow flex-column mr-1">
+                                <button className="list-item gray-text account-item">PROFILE</button>
+                                <button className="list-item gray-text account-item">PAYMENTS</button>
+                                <button className="list-item gray-text account-item">ORDERS</button>
+                                <button className="list-item gray-text account-item" onClick={() => logoutHandler()}>{(localStorage.getItem("user")) ? "LOGOUT": "LOGIN"}</button>
+                            </div>
+                        </div>          
                     </div>
                 </div>
             </div>

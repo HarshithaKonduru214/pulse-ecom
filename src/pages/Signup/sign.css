@@ -1,0 +1,80 @@
+@import url('https://utility-component.netlify.app/utility.css');
+@import url("https://oxygen-ui-component-library.netlify.app/components/input/input.css");
+@import "../../components/style.css";
+@import "../Home/Home.css";
+
+
+:root {
+    --primary-color: #db2777;
+    --secondary-color: #ec4899;
+    --light-pink: #fce7f3;
+    --font-black: #2F323A;
+    --gray-text: gray;
+    --light-gray: #f3f4f6;
+    --border-gray: #e5e7eb;
+    --white-color: white;
+    --light-blue: #e0e7ff;
+    --dark-gray: #475569;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    position: sticky;
+    background-color: var(--light-gray);
+}
+
+.main {
+    width: 25%;
+    margin: auto;
+    border: var(--border-gray) solid 1.5px;
+    background-color: white;
+}
+
+.main-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sign-button {
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    color: var(--white-color);
+    border: var(--gray-text) solid 1px;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.sign-button-secondary {
+    font-size: 1rem;
+    border: var(--border-gray) solid 1px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.sign-button-secondary:hover {
+    border: var(--primary-color) solid 2px;
+}
+
+.sign-up-container {
+    align-content: center;
+}
+
+.main-desc {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.placeholder {
+    top: -0.5rem;
+    font-size: 0.8rem;
+}
+
+.input-text {
+    width: 80%;
+}
