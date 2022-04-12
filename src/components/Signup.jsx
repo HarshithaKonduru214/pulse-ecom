@@ -40,7 +40,7 @@ const Signup = () => {
 
     return (
         <div class="sign-up-container mt-2">
-            {toast.type != "" && <Toast type={toast.type} msg={toast.msg} status={true} />}
+            {toast.type !== "" && <Toast type={toast.type} msg={toast.msg} status={true} />}
             <div class="main flex-column p-2">
                 <div class="main-heading mb-2">SIGNUP</div>
                 <div class="main-desc mb-2 gray-text">To quickly find your favourite items, saved addresses and payments.</div>

@@ -8,7 +8,7 @@ const Login = () => {
     const userEmail = useRef("");
     const userPassword = useRef("");
 
-    const { token, signInUser } = useAuth();
+    const { signInUser } = useAuth();
 
     const [ data, setData ] = useState({
         email: "",

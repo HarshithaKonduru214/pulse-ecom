@@ -1,6 +1,5 @@
-import { createContext, useContext, useState, useReducer, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 import axios from "axios";
-import { Toast } from "../components"
 import { useNavigate } from "react-router-dom";
 
 
@@ -47,15 +46,14 @@ const AuthProvider = ({children}) => {
             email: email,
             password: password,
           });
-          console.log(status)
-          if (status == 200) {
+          if (status === 200) {
             localStorage.setItem("login", JSON.stringify({ token: encodedToken }));
             setToken(encodedToken);
             localStorage.setItem("user", JSON.stringify({ user: foundUser }));
             setUser(foundUser);
             navigate("/product-listing");
           }
-          if (status == 201) {
+          if (status === 201) {
             setToast({type: "error", msg: "Wrong Password"})
           }
         } catch (error) {

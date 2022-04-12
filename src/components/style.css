@@ -458,15 +458,12 @@ label {
 
 .card-image-container {
     width: 80%;
-    min-height: 20rem;
     max-height: 20rem;
     align-self: center;
     justify-content: center;
 }
 
 .card-container {
-    min-width: 18rem;
-    max-width: 18rem;
     flex-wrap: wrap;
 }
 
@@ -494,3 +491,6 @@ label {
     border-bottom: var(--light-gray) solid 2px;
     background-color: var(--white-color);
 }
+
+
+
