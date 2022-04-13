@@ -101,3 +101,8 @@
     background-color: var(--white-color);
     color: var(--primary-color);
 }
+
+
+.card-image-container{
+    width: 40%;
+}
