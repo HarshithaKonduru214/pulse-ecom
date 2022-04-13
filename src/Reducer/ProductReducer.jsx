@@ -14,7 +14,7 @@ const productReducer = (state, {type, payload}) => {
         case "RESET" : return {...state, 
             sortBy: "", 
             gender: null, 
-            brandFilter: brands.reduce((acc,curr)=> (acc[curr]= false,acc),{}), 
+            brandFilter: brands.reduce((acc,curr)=> (acc[curr]= false),{}), 
             priceFilter: 10000, 
             inStock: true
         }
