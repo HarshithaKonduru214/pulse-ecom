@@ -76,15 +76,17 @@
 
 .card-container {
     position: relative;
+    cursor: default;
 }
 
 .card-close {
     position: absolute;
-    font-size: 1rem;
-    top: 0;
-    right: 0;
+    font-size: 1.1rem;
+    top: 0.1rem;
+    right: 0rem;
     margin: 0.1rem;
     background-color: var(--white-color);
+    cursor: pointer;
 }
 
 .card-heading {
@@ -103,6 +105,25 @@
 }
 
 
-.card-image-container{
+.card-image-container-hor{
     width: 40%;
+    align-self: center;
+    justify-content: center;
 }
+
+.card-qty-icon {
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.card-container-hor {
+    background-color: white;
+  border-radius: 0.5rem;
+  position: relative;
+  height: fit-content;
+}
+
+.horizontal-card {
+    width: 100%;
+}
+

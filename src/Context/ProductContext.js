@@ -10,10 +10,12 @@ const ProductContext = ({children}) => {
         products: [],
         sortBy: "",
         gender: null,
-        brandFilter: brands.reduce((acc,curr)=> (acc[curr] = false, acc) , {}),
+        brandFilter: brands.reduce((acc,curr)=> (acc[curr]= false,acc),{}),
         priceFilter: 10000,
         inStock: true
     })
+
+    console.log(products)
 
     const objFilter = (obj) => {
         let newObj = {}

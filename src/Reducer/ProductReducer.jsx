@@ -1,7 +1,4 @@
-import { brands } from "../data"
-
 const productReducer = (state, {type, payload}) => {
-    console.log(type, payload)
     switch(type) {
         case "FETCH_DATA": return {...state, products: payload}
         case "SORT": return {...state, sortBy: payload};
@@ -14,7 +11,7 @@ const productReducer = (state, {type, payload}) => {
         case "RESET" : return {...state, 
             sortBy: "", 
             gender: null, 
-            brandFilter: brands.reduce((acc,curr)=> (acc[curr]= false),{}), 
+            brandFilter: {}, 
             priceFilter: 10000, 
             inStock: true
         }
