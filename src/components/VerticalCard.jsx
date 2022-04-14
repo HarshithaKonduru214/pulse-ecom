@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const VerticalCard = ({ brand, category, discount, gender, inStock, name, price, rating, _id, img, alt}) => {
     const { dispatch } = useProducts();
     const { isLogin } = useAuth();
+    console.log(isLogin)
     const navigate = useNavigate()
     const ratingHandler = (rating) => {
         return [...Array(Math.floor(rating / 1))] 

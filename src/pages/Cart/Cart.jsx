@@ -6,7 +6,6 @@ import "./cart.css"
 
 const Cart = () => {
     const { cart } = useProducts();
-    console.log(cart)
 
     return (
         <div>
