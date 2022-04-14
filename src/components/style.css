@@ -501,5 +501,11 @@ label {
     color: var(--white-color);
 }
 
+.card-rating-number, .card-price {
+    font-weight: bold;
+}
+
+
+
 
 

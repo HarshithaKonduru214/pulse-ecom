@@ -2,16 +2,17 @@ import "../pages/Signup/sign.css";
 import { useState } from "react"
 import { Toast } from "../components"
 import { useAuth } from "../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
     const [check, setCheck] = useState(false)
+    const navigate = useNavigate();
     const [ data, setData ] = useState({
         firstName: "",
         email: "",
         password: "",
         confirm: ""
     });
-
 
     const { signUpUser, toast, setToast } = useAuth();
 
@@ -72,7 +73,7 @@ const Signup = () => {
                             setToast({type: "", msg: ""});
                             signUp();
                             }}>Create New Account</button>
-                        <button class="sign-button-secondary no-style-link gray-text flex-row justify-content-around">Already have an Account</button>
+                        <button class="sign-button-secondary no-style-link gray-text flex-row justify-content-around" onClick={() => navigate('/login')}>Already have an Account</button>
                     </div>
                 </div>
                 

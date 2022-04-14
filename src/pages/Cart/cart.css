@@ -114,6 +114,8 @@
 .card-qty-icon {
     font-size: 0.8rem;
     cursor: pointer;
+    border: none;
+    background-color: var(--white-color);
 }
 
 .card-container-hor {
@@ -121,9 +123,10 @@
   border-radius: 0.5rem;
   position: relative;
   height: fit-content;
+  width: 80%;
 }
 
 .horizontal-card {
-    width: 100%;
+    width: 80%;
 }
 

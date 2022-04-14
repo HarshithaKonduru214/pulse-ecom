@@ -7,7 +7,6 @@ import { useProducts } from "../../Context/ProductContext";
 
 const Product = () => {
     const { dispatch, filterData } = useProducts();
-
     useEffect(() => {
         (async () => {
             const { data: { products } } = await axios.get("/api/products");
@@ -23,7 +22,7 @@ const Product = () => {
                 </div>
                 <div className="product-list flex-row p-2">
                     { filterData && filterData.map(({ brand, category, desc, discount, gender, id, inStock, name, price, rating, _id, img, alt }) => {return (
-                        <VerticalCard brand={brand} category={category} discount={discount} gender={gender} key={_id} inStock={inStock} name={name} price={price} rating={rating} img={img} alt={alt} />
+                        <VerticalCard brand={brand} category={category} discount={discount} gender={gender} _id={_id} inStock={inStock} name={name} price={price} rating={rating} img={img} alt={alt} />
                     )})}
                 </div>
             </main>

@@ -19,7 +19,6 @@ const Login = () => {
         (async () => {
           if (data.email && data.password !== "") {
             signInUser(data.email, data.password);
-            console.log(data)
           }
         })();
       }, [data.email, data.password]);

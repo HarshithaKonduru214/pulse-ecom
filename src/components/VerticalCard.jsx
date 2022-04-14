@@ -1,14 +1,19 @@
 import "./style.css"
+import { useProducts } from "../Context/ProductContext"
 import { FaRegHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
+import { useAuth } from "../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const VerticalCard = ({ brand, category, discount, gender, inStock, name, price, rating, _id, img, alt}) => {
+    const { dispatch } = useProducts();
+    const { isLogin } = useAuth();
+    const navigate = useNavigate()
     const ratingHandler = (rating) => {
         return [...Array(Math.floor(rating / 1))] 
     }
     return (
         <div className="card-container box-shadow flex-column mb-2">
-            <div className={`card-image-container flex-column ${inStock ? "" : "text-overlay" }`}>
-                
+            <div className={`card-image-container flex-column ${inStock ? "" : "text-overlay" }`}>    
                 <img className="card-image image-res" src={img} alt={alt} />
             </div>
             {inStock || <div class="overlay-text">OUT OF STOCK</div>}
@@ -28,7 +33,7 @@ const VerticalCard = ({ brand, category, discount, gender, inStock, name, price,
             </div>
             <div className="card-button flex-row container">
                 <button className="card-button card-wishlist align-self-center"><FaRegHeart /></button>
-                <button className="card-button card-cart align-self-center">Add To Cart</button>
+                <button className="card-button card-cart align-self-center" onClick={() => isLogin ? dispatch({ type: "ADD_TO_CART", payload: { brand, category, discount, gender, inStock, name, price, rating, _id, img, alt} }) : navigate('/signup')}>Add To Cart</button>
             </div>
         </div>
         <div className="card-badge-top">{discount}% OFF</div>

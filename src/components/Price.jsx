@@ -1,4 +1,7 @@
+import { useProducts } from "../Context/ProductContext"
+
 const Price = () => {
+    const { totalPrice, discountPrice } = useProducts();
     return (
         <div>
             <div class="cart-sidebar-coupons flex-column">
@@ -15,11 +18,11 @@ const Price = () => {
                     <div class="cart-price-heading mb-2">Price Details</div>
                     <div class="cart-price flex-row justify-content-between pb-2">
                         <div class="cart-price-head">Total MRP</div>
-                        <div class="cart-price-value">₹1,198</div>
+                        <div class="cart-price-value">₹{totalPrice}</div>
                     </div>
                     <div class="cart-price flex-row justify-content-between pb-2">
                         <div class="cart-price-head">Discount on MRP</div>
-                        <div class="cart-price-value">-₹839</div>
+                        <div class="cart-price-value">-₹{discountPrice}</div>
                     </div>
                     <div class="cart-price flex-row justify-content-between pb-2">
                         <div class="cart-price-head">Coupon Discount</div>
@@ -32,7 +35,7 @@ const Price = () => {
                     <hr />
                     <div class="cart-price flex-row justify-content-between pb-2 mt-2">
                         <div class="cart-price-head black-text bold">Total Amount</div>
-                        <div class="cart-price-value black-text bold">₹1,198</div>
+                        <div class="cart-price-value black-text bold">₹{totalPrice - discountPrice}</div>
                     </div>
                 </div>
                 <button class="primary-button button">PLACE ORDER</button>
