@@ -2,6 +2,7 @@ import { FaStar, FaRegStar, FaTimes, FaStarHalfAlt, FaPlus, FaMinus } from "reac
 import { useProducts } from "../Context/ProductContext"
 const Horizontal = ({ brand, category, discount, gender, inStock, name, price, rating, _id, img, alt, quantity}) => {
     const { dispatch } = useProducts()
+    
     const ratingHandler = (rating) => {
          return [...Array(Math.floor(rating / 1))]
     }

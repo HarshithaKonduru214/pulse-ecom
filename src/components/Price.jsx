@@ -1,4 +1,5 @@
 import { useProducts } from "../Context/ProductContext"
+import { Link } from "react-router-dom"
 
 const Price = () => {
     const { totalPrice, discountPrice } = useProducts();
@@ -22,11 +23,11 @@ const Price = () => {
                     </div>
                     <div class="cart-price flex-row justify-content-between pb-2">
                         <div class="cart-price-head">Discount on MRP</div>
-                        <div class="cart-price-value">-₹{discountPrice}</div>
+                        <div class="cart-price-value">-₹{totalPrice - discountPrice}</div>
                     </div>
                     <div class="cart-price flex-row justify-content-between pb-2">
                         <div class="cart-price-head">Coupon Discount</div>
-                        <a href="#" class="no-style-link cart-price-value">Apply Coupon</a>
+                        <Link to="/" class="no-style-link cart-price-value">Apply Coupon</Link>
                     </div>
                     <div class="cart-price flex-row justify-content-between pb-2">
                         <div class="cart-price-head">Delivery Fee</div>
@@ -35,7 +36,7 @@ const Price = () => {
                     <hr />
                     <div class="cart-price flex-row justify-content-between pb-2 mt-2">
                         <div class="cart-price-head black-text bold">Total Amount</div>
-                        <div class="cart-price-value black-text bold">₹{totalPrice - discountPrice}</div>
+                        <div class="cart-price-value black-text bold">₹{discountPrice}</div>
                     </div>
                 </div>
                 <button class="primary-button button">PLACE ORDER</button>
