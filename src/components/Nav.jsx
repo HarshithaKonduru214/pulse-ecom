@@ -7,7 +7,7 @@ import { useProducts } from "../Context/ProductContext"
 
 const Nav = () => {
     const { user, logoutHandler, isLogin, dispatch } = useAuth();
-    const { cart } = useProducts();
+    const { cart, wishlist } = useProducts();
     
     return (
         <nav className="nav mb-2 box-shadow">
@@ -46,8 +46,8 @@ const Nav = () => {
                             placeholder="Search on Pulse" />
                     </div>
                     <div className="nav-user align-self-end">
-                        <Link to="/" className="wishlist mr-2 button no-style-link black-text"><FaHeart className="mr-1" /><span
-                                className="nav-user-title">Wishlist</span></Link>
+                        <Link to={isLogin ? "/wishlist" : "/login"} className="wishlist mr-2 button no-style-link black-text"><FaHeart className="mr-1" /><span
+                                className="nav-user-title">Wishlist ( {wishlist.length} )</span></Link>
                         <Link to={isLogin ? "/cart" : "/login"} className="cart mr-2 button no-style-link black-text"><FaShoppingCart className="mr-1" /><span
                                 className="nav-user-title">Cart ( {cart.length} )</span></Link>         
                         <div className="nav-category-item align-self-end pb-2">
