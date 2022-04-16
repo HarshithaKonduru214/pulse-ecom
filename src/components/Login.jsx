@@ -21,8 +21,8 @@ const Login = () => {
             signInUser(data.email, data.password);
           }
         })();
-        //eslint-disable-next-line
-      }, [data.email, data.password]);
+        // eslint-disable-line react-hooks/exhaustive-deps
+      }, [data.email, data.password]); 
 
       
   const signInFunction = () => {
