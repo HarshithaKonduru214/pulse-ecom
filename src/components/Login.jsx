@@ -8,7 +8,7 @@ const Login = () => {
     const userEmail = useRef("");
     const userPassword = useRef("");
 
-    
+    const { signInUser } = useAuth();
 
     const [ data, setData ] = useState({
         email: "",
@@ -17,7 +17,6 @@ const Login = () => {
 
     useEffect(() => {
         (async () => {
-            const { signInUser } = useAuth();
           if (data.email && data.password !== "") {
             signInUser(data.email, data.password);
           }
