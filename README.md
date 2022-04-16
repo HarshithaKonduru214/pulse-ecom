@@ -2,6 +2,10 @@
 
 <p> Pulse is an ecommerce website that sells the best fragrances.</p>
 
+<h4>Test Credentials</h4>
+  <p>Email: adarshbalika@gmail.com</p>
+  <p>Password: adarshbalika</p>
+
 <h2>Available Pages</h2>
 <ul>
   <li>Home Page</li>
@@ -13,7 +17,6 @@
 <ul> 
   
 <h2>Home Page</h2>
-Link: https://pulse-fragrances.netlify.app/
   
 <p>The homepage consists of the following sections:</p>
 <ul>
@@ -26,10 +29,9 @@ Link: https://pulse-fragrances.netlify.app/
   <li>App Policy</li>
 </ul><br>
   
-![gif](https://user-images.githubusercontent.com/83581646/154861238-584c8008-f424-4ac9-bc34-18028d97d408.gif)
+![home](https://user-images.githubusercontent.com/83581646/163680405-cfaaf8dc-bec8-4c15-853d-b85b3a59f755.png)
 
   <h2>Product Listing Page</h2>
-  Link: https://pulse-fragrances.netlify.app/pages/product-listing/product-listing.html
   <p>The product listing page consists of the following sections:</p>
   <ul>
     <li>Filters:
@@ -37,63 +39,57 @@ Link: https://pulse-fragrances.netlify.app/
         <li>Sort By (Filter by Price, Discount and Popularity)</li>
         <li>Gender (Filter by male, female and unisex)</li>
         <li>Rating (Filter by ratings gien by customer)</li>
-        <li>Fragrance Family (Filter by fresh, floral, fruity and warm) </li>
+        <li>Brands (Dior, Davidoff, etc.) </li>
       </ul>
     </li>
     <li>Products: Products card consists of a product image, name, price, rating and a couple of buttons.</li>
   </ul><br>
   
-  
-  ![image](https://user-images.githubusercontent.com/83581646/154860478-ebbeaf75-b52a-48e6-bc53-b4704fb93d7c.png)
-  
+  ![product](https://user-images.githubusercontent.com/83581646/163680447-9359b26d-f395-4fbf-a0db-bcb8a813a5b8.png)
 
   <h2>Sign Up Page</h2>
-  Link: https://pulse-fragrances.netlify.app/pages/sign-up/sign-up.html
   <p>The signup page consists of the following sections:</p>
   <ul>
-    <li>Signup Form: Takes the user's name, email address and password for registering the user.
+    <li>Signup Form: Takes the user's name, email address and password for registering the user. It displays an appropriate message on successfully registering.
     </li>
   </ul><br>
   
-  
-  ![image](https://user-images.githubusercontent.com/83581646/154860556-28174f5d-a889-4004-9d52-f7296f556c29.png)
-
+![signup](https://user-images.githubusercontent.com/83581646/163680459-3852b698-2ed6-434e-bbe0-351ec134f96d.png)
 
   <h2>Login Page</h2>
   Link: https://pulse-fragrances.netlify.app/pages/login/login.html
    <p>The login page consists of the following sections:</p>
   <ul>
-    <li>Login Form: Takes the user's email address and password for logging in the user.
+    <li>Login Form: Takes the user's email address and password for logging in the user. It redirects the user to product listing page on successful login.
     </li>
   </ul><br>
   
   
-  ![image](https://user-images.githubusercontent.com/83581646/154860606-3a0657ad-0bd3-46d5-8945-ed56a0ccee64.png)
+![login](https://user-images.githubusercontent.com/83581646/163680474-548f690c-04d8-4a9e-ae7c-1f5f5458d423.png)
+
 
 
   <h2>Cart</h2>
-   Link: https://pulse-fragrances.netlify.app/pages/cart/cart.html
   <p>The cart page consists of the following sections:</p>
   <ul>
     <li>Address details of the customer</li>
-    <li>Products added to cart</li>
+    <li>Products added to cart - Products can be removed, quantity can be increased or decreased according to user's choice, and also products can be moved to wishlist.</li>
     <li>Order Summary</li>
   </ul><br>
   
  
-  ![image](https://user-images.githubusercontent.com/83581646/154860632-f65c5ed3-1ebb-448c-9756-74579d82a854.png)
+
+![cart](https://user-images.githubusercontent.com/83581646/163680494-6dab0764-5f2e-4a92-9292-22108e973622.png)
 
 
 
   <h2>Wishlist</h2>
-  Link: https://pulse-fragrances.netlify.app/pages/wishlist/wishlist.html
   <p>The wishlist page consists of the following sections:</p>
   <ul>
-    <li>Products added to wishlist</li>
+    <li>Products added to wishlist - Products can be removed from wishlist.</li>
     <li>Information related to profile, orders, wishlist, payments and also a LOGOUT button.</li>
   </ul><br>
   
   
-  ![image](https://user-images.githubusercontent.com/83581646/154860716-5103b9c1-557e-4685-9569-7521e5d7dc54.png)
 
-
+![wishlist](https://user-images.githubusercontent.com/83581646/163680501-5fe27ca9-eca1-42dc-9448-87fbfa15c008.png)
