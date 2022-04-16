@@ -7,11 +7,12 @@ import { sortData, filterGender, filterInStock, filteredBrands, filterPrice  } f
 const productContext = createContext(null);
 
 const ProductContext = ({children}) => {
+    const brandInitialState = {"dior": false, "davidoff": false, "versace": false, "calvin klien": false, "gucci": false, "nykaa": false, "engage": false}
     const [{ products, sortBy, gender, brandFilter, priceFilter, inStock, cart }, dispatch] = useReducer(productReducer, {
         products: [],
         sortBy: "",
         gender: null,
-        brandFilter: brands.reduce((acc,curr)=> (acc[curr]= false,acc),{}),
+        brandFilter: brandInitialState,
         priceFilter: 10000,
         inStock: true,
         cart: [],
@@ -41,8 +42,6 @@ const ProductContext = ({children}) => {
         return newObj
     }
     
-
-   
     const brandsToBeFiltered = objFilter(brandFilter)
     const filteredStock = filterInStock(products, inStock)
     const sortedData = sortData(filteredStock, sortBy);
@@ -52,7 +51,6 @@ const ProductContext = ({children}) => {
     const totalPrice = getTotalCartPrice(cart);
     const discountPrice = getDiscountCartPrice(cart)
     return (
-    
         <productContext.Provider value={{ dispatch, filterData, cart, totalPrice, discountPrice }}>
             {children}
         </productContext.Provider>
