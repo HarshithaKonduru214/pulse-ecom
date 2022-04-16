@@ -6,9 +6,8 @@ import { useAuth } from "../Context/AuthContext";
 import { useProducts } from "../Context/ProductContext"
 
 const Nav = () => {
-    const { user, logoutHandler, isLogin, dispatch } = useAuth();
-    const { cart, wishlist } = useProducts();
-    
+    const { user, logoutHandler, isLogin } = useAuth();
+    const { cart, wishlist } = useProducts();    
     return (
         <nav className="nav mb-2 box-shadow">
             <div className="nav-content flex-row justify-content-between">
@@ -18,7 +17,7 @@ const Nav = () => {
                     </div>
                     <div className="nav-categories flex-row justify-content-main gap">
                         <div className="nav-category-item align-self-end pb-2">
-                            <Link className="list-heading no-style-link" to="/product-listing" onClick={() => dispatch({type:"FILTER_GENDER", payload: "female"})}>
+                            <Link className="list-heading no-style-link" to="/product-listing">
                                 <strong>WOMEN</strong>
                             </Link>
                             <div className="list-item-stacked box-shadow flex-column p-2">
@@ -28,13 +27,13 @@ const Nav = () => {
                         <div className="nav-category-item align-self-end pb-2">
                             <Link className="list-heading no-style-link" to="/product-listing" ><strong>MEN</strong></Link>
                             <div className="list-item-stacked box-shadow flex-column p-2">
-                                { types.map((type) => <Link to="/" key={type} className="list-item gray-text no-style-link">{ type }</Link>)}
+                                { types.map((type) => <Link to="/product-listing" key={type} className="list-item gray-text no-style-link">{ type }</Link>)}
                             </div>
                         </div>
                         <div className="nav-category-item align-self-end pb-2">
-                            <Link className="list-heading no-style-link" to="/"><strong>TOP BRANDS</strong></Link>
+                            <Link className="list-heading no-style-link" to="/product-listing"><strong>TOP BRANDS</strong></Link>
                             <div className="list-item-stacked box-shadow flex-column p-2">
-                                { brands.map( (brand) => <Link to="/" key={brand} className="list-item gray-text no-style-link">{ brand }</Link>)}             
+                                { brands.map( (brand) => <Link to="/product-listing" key={brand} className="list-item gray-text no-style-link">{ brand }</Link>)}             
                             </div>
                         </div>
                     </div>
