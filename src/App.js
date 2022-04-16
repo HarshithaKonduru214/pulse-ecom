@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom"
-import { Home, Product, Sign, LoginPage, Cart } from "./pages"
+import { Home, Product, Sign, LoginPage, Cart, Wishlist } from "./pages"
 import { MockAPI } from "./components";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
         <Route path="/signup" element={ <Sign /> } />
         <Route path="/login" element={ <LoginPage /> } />
         <Route path="/cart" element={ <Cart /> } /> 
+        <Route path="/wishlist" element={ <Wishlist /> } />
       </Routes>
     </div>
   );

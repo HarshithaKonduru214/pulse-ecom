@@ -19,6 +19,15 @@ const productReducer = (state, {type, payload}) => {
         case "INCREASE_QUANTITY" :  return {...state, cart: state.cart.map((item) => item._id === payload._id ? {...item, quantity: item.quantity + 1} : item)}
         case "DECREASE_QUANTITY" : return {...state, cart: state.cart.map((item) => item._id === payload._id ? {...item, quantity: item.quantity - 1} : item)}
         case "REMOVE_FROM_CART" : return {...state, cart: state.cart.filter((item) => item._id !== payload._id)}
+        case "ADD_TO_WISHLIST" : { 
+            if (state.wishlist.filter((item) => item._id === payload._id ).length) {
+                return state
+            } else {
+                return {...state, wishlist: [{ ...payload, quantity: 1 }, ...state.wishlist] }
+            }
+            
+        }
+        case "REMOVE_FROM_WISHLIST" : return {...state, wishlist: state.wishlist.filter((item) => item._id !== payload._id)}
         case "RESET" : return {...state, 
             sortBy: "", 
             gender: null, 

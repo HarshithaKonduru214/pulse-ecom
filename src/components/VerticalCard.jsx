@@ -1,6 +1,6 @@
 import "./style.css"
 import { useProducts } from "../Context/ProductContext"
-import { FaRegHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
+import { FaHeart,FaRegHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import { useState } from "react"
 import { useAuth } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ const VerticalCard = ({ brand, category, discount, gender, inStock, name, price,
     const { dispatch } = useProducts();
     const { isLogin } = useAuth();
     const [click, setClick] = useState(false)
+    const [wish, setWish] = useState(false)
     console.log(isLogin)
     const navigate = useNavigate()
     const ratingHandler = (rating) => {
@@ -35,7 +36,17 @@ const VerticalCard = ({ brand, category, discount, gender, inStock, name, price,
                 <div className="card-rating-desc ml-2 gray-text"> ( {rating} ) </div>
             </div>
             <div className="card-button flex-row container">
-                <button className="card-button card-wishlist align-self-center"><FaRegHeart /></button>
+                <button className="card-button card-wishlist align-self-center" onClick={() => {
+                    if(isLogin) {
+                        setWish((prev) => !prev);
+                        if(wish) {
+                            dispatch({ type: "REMOVE_FROM_WISHLIST", payload: { brand, category, discount, gender, inStock, name, price, rating, _id, img, alt} })
+                        } else {
+                            dispatch({ type: "ADD_TO_WISHLIST", payload: { brand, category, discount, gender, inStock, name, price, rating, _id, img, alt} })
+                    }} else {
+                        navigate('/login')
+                    }
+                }}>{wish ? <FaHeart /> : <FaRegHeart />}</button>
                 <button className="card-button card-cart align-self-center" onClick={() => {
                     if(isLogin) {
                         setClick((prev) => !prev);

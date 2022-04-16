@@ -39,7 +39,10 @@ const Horizontal = ({ brand, category, discount, gender, inStock, name, price, r
                                 <div class="card-qty-content align-self-center mr-1" >{quantity}</div>
                                 <button class="card-qty-icon align-self-center mr-1" onClick={() => dispatch({type: "INCREASE_QUANTITY", payload:{ brand, category, discount, gender, inStock, name, price, rating, _id, img, alt} })} ><FaPlus /></button>
                             </div>
-                            <div class="card-button card-wishlish secondary-button">MOVE TO WISHLIST</div>
+                            <div class="card-button card-wishlish secondary-button" onClick={() => {
+                                dispatch({type: "ADD_TO_WISHLIST", payload:{ brand, category, discount, gender, inStock, name, price, rating, _id, img, alt} })
+                                dispatch({type: "REMOVE_FROM_CART", payload:{ brand, category, discount, gender, inStock, name, price, rating, _id, img, alt} })
+                            }}>MOVE TO WISHLIST</div>
                         </div>
                     </div>
                 </div>

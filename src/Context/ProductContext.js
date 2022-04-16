@@ -7,7 +7,7 @@ const productContext = createContext(null);
 
 const ProductContext = ({children}) => {
     const brandInitialState = {"dior": false, "davidoff": false, "versace": false, "calvin klien": false, "gucci": false, "nykaa": false, "engage": false}
-    const [{ products, sortBy, gender, brandFilter, priceFilter, inStock, cart }, dispatch] = useReducer(productReducer, {
+    const [{ products, sortBy, gender, brandFilter, priceFilter, inStock, cart, wishlist }, dispatch] = useReducer(productReducer, {
         products: [],
         sortBy: "",
         gender: null,
@@ -15,6 +15,7 @@ const ProductContext = ({children}) => {
         priceFilter: 10000,
         inStock: true,
         cart: [],
+        wishlist: [],
     })
 
     const getTotalCartPrice = (cart) => {
@@ -50,7 +51,7 @@ const ProductContext = ({children}) => {
     const totalPrice = getTotalCartPrice(cart);
     const discountPrice = getDiscountCartPrice(cart)
     return (
-        <productContext.Provider value={{ dispatch, filterData, cart, totalPrice, discountPrice }}>
+        <productContext.Provider value={{ dispatch, filterData, cart, wishlist, totalPrice, discountPrice }}>
             {children}
         </productContext.Provider>
     )
