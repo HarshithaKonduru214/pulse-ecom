@@ -9,10 +9,10 @@ const Product = () => {
     const { dispatch, filterData } = useProducts();
     useEffect(() => {
         (async () => {
-            
             const { data: { products } } = await axios.get("/api/products");
             dispatch({type:"FETCH_DATA", payload: products})
         })();
+        //eslint-disable-next-line
     }, []);
     return (
         <div>
