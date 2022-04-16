@@ -21,7 +21,8 @@ const Login = () => {
             signInUser(data.email, data.password);
           }
         })();
-      }, [data]);
+        //eslint-disable-next-line
+      }, [data.email, data.password]);
 
       
   const signInFunction = () => {
