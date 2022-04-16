@@ -6,9 +6,9 @@ import { Nav, Sidebar, VerticalCard, SocialMedia, Footer } from "../../component
 import { useProducts } from "../../Context/ProductContext";
 
 const Product = () => {
-    const { filterData } = useProducts();
+    const { dispatch, filterData } = useProducts();
     useEffect(() => {
-        const { dispatch } = useProducts();
+        
         (async () => {
             const { data: { products } } = await axios.get("/api/products");
             dispatch({type:"FETCH_DATA", payload: products})
