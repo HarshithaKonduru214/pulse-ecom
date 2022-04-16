@@ -1,5 +1,4 @@
 import { useContext, createContext, useReducer } from "react";
-import { brands } from "../data"
 import { productReducer } from "../Reducer";
 import { sortData, filterGender, filterInStock, filteredBrands, filterPrice  } from "../utils";
 
