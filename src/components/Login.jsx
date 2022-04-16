@@ -8,7 +8,7 @@ const Login = () => {
     const userEmail = useRef("");
     const userPassword = useRef("");
 
-    const { token, signInUser } = useAuth();
+    const { signInUser } = useAuth();
 
     const [ data, setData ] = useState({
         email: "",
@@ -19,10 +19,10 @@ const Login = () => {
         (async () => {
           if (data.email && data.password !== "") {
             signInUser(data.email, data.password);
-            console.log(data)
           }
         })();
-      }, [data.email, data.password]);
+        
+      }, [data.email, data.password]); // eslint-disable-line react-hooks/exhaustive-deps
 
       
   const signInFunction = () => {
@@ -53,7 +53,7 @@ const Login = () => {
                             <input type="checkbox" name="condition" id="condition" />
                             <label for="condition">Remember Me</label>
                         </div>
-                        <a class="form-check-link no-style-link" href="#">Forgot Password?</a>
+                        <Link class="form-check-link no-style-link" to="/">Forgot Password?</Link>
                     </div>
                     <div class="main-buttons flex-column">
                         <button class="sign-button mb-2" onClick={() => signInFunction()}>LOGIN</button>

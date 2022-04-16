@@ -494,3 +494,18 @@ label {
     border-bottom: var(--light-gray) solid 2px;
     background-color: var(--white-color);
 }
+
+/* extra */
+.primary-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.card-rating-number, .card-price {
+    font-weight: bold;
+}
+
+
+
+
+

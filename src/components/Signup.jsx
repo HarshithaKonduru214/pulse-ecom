@@ -2,16 +2,17 @@ import "../pages/Signup/sign.css";
 import { useState } from "react"
 import { Toast } from "../components"
 import { useAuth } from "../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
     const [check, setCheck] = useState(false)
+    const navigate = useNavigate();
     const [ data, setData ] = useState({
         firstName: "",
         email: "",
         password: "",
         confirm: ""
     });
-
 
     const { signUpUser, toast, setToast } = useAuth();
 
@@ -40,7 +41,7 @@ const Signup = () => {
 
     return (
         <div class="sign-up-container mt-2">
-            {toast.type != "" && <Toast type={toast.type} msg={toast.msg} status={true} />}
+            {toast.type !== "" && <Toast type={toast.type} msg={toast.msg} status={true} />}
             <div class="main flex-column p-2">
                 <div class="main-heading mb-2">SIGNUP</div>
                 <div class="main-desc mb-2 gray-text">To quickly find your favourite items, saved addresses and payments.</div>
@@ -72,7 +73,7 @@ const Signup = () => {
                             setToast({type: "", msg: ""});
                             signUp();
                             }}>Create New Account</button>
-                        <button class="sign-button-secondary no-style-link gray-text flex-row justify-content-around">Already have an Account</button>
+                        <button class="sign-button-secondary no-style-link gray-text flex-row justify-content-around" onClick={() => navigate('/login')}>Already have an Account</button>
                     </div>
                 </div>
                 

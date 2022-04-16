@@ -11,4 +11,7 @@ export { VerticalCard } from "./VerticalCard"
 export { Signup } from "./Signup"
 export { Toast } from "./Toast"
 export { Login } from "./Login"
+export { Horizontal } from "./Horizontal"
+export { Address } from "./Address"
+export { Price } from "./Price"
 

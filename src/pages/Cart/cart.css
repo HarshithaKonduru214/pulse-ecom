@@ -1,0 +1,132 @@
+.cart-body {
+    background-color: var(--light-gray);
+}
+
+.cart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "content sidebar";
+    width: 80%;
+    margin: auto;
+    gap: 2rem;
+}
+
+.cart-content {
+    grid-area: content;
+}
+
+.cart-sidebar {
+    grid-area: sidebar;
+    border: var(--border-gray) solid 1px;
+    padding: 1rem;
+    height: fit-content;
+    background-color: var(--white-color);
+}
+
+.cart-coupon-heading {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.cart-coupon-container {
+    justify-content: space-between;
+}
+
+.coupon-text {
+    font-weight: bold;
+}
+
+.cart-price {
+    color: var(--gray-text);
+}
+
+.cart-price-heading {
+    color: var(--dark-gray);
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.cart-address {
+    border: var(--border-gray) solid 1px;
+    border-radius: 0.3rem;
+    background-color: var(--white-color);
+}
+
+.cart-address-name {
+    margin-bottom: 0.5rem;
+}
+
+.qty {
+    border: var(--secondary-color) solid 1px;
+    padding: 0.45rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+}
+
+.heading {
+    font-size: 1.2rem;
+}
+
+.card-qty-icon {
+    font-size: 1.3rem;
+}
+
+.card-container {
+    position: relative;
+    cursor: default;
+}
+
+.card-close {
+    position: absolute;
+    font-size: 1.1rem;
+    top: 0.1rem;
+    right: 0rem;
+    margin: 0.1rem;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.card-heading {
+    text-align: left;
+}
+
+.card-content {
+    width: fit-content;
+    margin-top: 0.5rem;
+}
+
+.secondary-button-outlined {
+    border: var(--secondary-color) solid 1px;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+
+
+.card-image-container-hor{
+    width: 40%;
+    align-self: center;
+    justify-content: center;
+}
+
+.card-qty-icon {
+    font-size: 0.8rem;
+    cursor: pointer;
+    border: none;
+    background-color: var(--white-color);
+}
+
+.card-container-hor {
+    background-color: white;
+  border-radius: 0.5rem;
+  position: relative;
+  height: fit-content;
+  width: 80%;
+}
+
+.horizontal-card {
+    width: 80%;
+}
+
